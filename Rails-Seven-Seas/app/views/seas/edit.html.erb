@@ -1,28 +1,57 @@
+<div class="container">
 <%= form_for @sea do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= f.label :name%>
+  <%= f.text_field :name, :class => 'form-control' %>
 
-  <%= f.label :temperature %>
-  <%= f.number_field :temperature %>
+  <%= f.label :temperature%>
+  <%= f.number_field :temperature, step: :any, :class => 'form-control' %>
 
-  <%= f.label :bio %>
-  <%= f.text_area :bio %>
+  <%= f.label :bio%>
+  <%= f.text_area :bio, :class => 'form-control' %>
 
-  <%= f.label :image_url %>
-  <%= f.text_field :image_url %>
+  <%= f.label :image_url%>
+  <%= f.text_field :image_url, :class => 'form-control' %>
 
-  <%= f.label :mood %>
-  <%= f.text_field :mood %>
+  <%= f.label :mood%>
+  <%= f.text_field :mood, :class => 'form-control' %>
 
   <%= f.label :favorite_color %>
-  <%= f.text_field :favorite_color %>
+  <%= f.text_field :favorite_color, :class => 'form-control' %>
 
   <%= f.label :scariest_creature %>
-  <%= f.text_field :scariest_creature %>
+  <%= f.text_field :scariest_creature, :class => 'form-control' %>
+  
 
   <%= f.label :has_mermaids %>
   <%= f.check_box :has_mermaids %>
+  
+  
+  <%= f.submit :class => "form-control btn btn-info" %>
+</form>
 
-  <%=  f.submit %>
 
+        
+  
   <% end %>
+
+
+
+
+</form>
+  <div class="text-center row" style="margin: 1em">
+    <div class="col-sm-1">
+      <button class="btn btn-info" style="margin: 0 auto"><%=link_to "Back", @sea %></button>
+    </div>
+    <div class="col-sm-1">
+    <button class="btn btn-info" style="margin: 0 auto"><%= link_to "All Seas", sea_path, :class => "btn-info"%></button>
+    </div>
+    <div class="col-sm-9">
+    </div>
+    <div class="col-sm-1">
+    <%= button_to "Delete", sea_path, method: :delete,:class => "btn btn-danger" %>
+
+
+  
+  </div>
+  </div>
+    
